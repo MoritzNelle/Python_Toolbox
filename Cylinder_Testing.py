@@ -33,21 +33,20 @@ def area_cylinder(r):                                   # Define the functions t
 def volume_cylinder(r, h):
     return area_cylinder(r) * h
 
-
 print("\nTest of the functions area_cylinder and volume_cylinder\nType 'exit' for the radius or height to end the test\n")
 
 while True:                                             # Loops until the user types 'exit'
-    r = input('Radius of the cylinder   [cm]:    ')     # not converted to float yet, because we need to check if the user typed 'exit' (string)
+    r = input('Radius of the cylinder [cm]:     ')      # not converted to float yet, because we need to check if the user typed 'exit' (string)
     if r == 'exit':                                     # Check if the user typed 'exit'
         print("Test ended")
         break                                           # We are not encuraged to use break, but it is the most efficient way to end the loop
     r = float(r)                                        # Convert the user's input to a float after checking if the user typed 'exit'
     
-    h = input('Height of the cylinder   [cm]:    ')
+    h = input('Height of the cylinder [cm]:     ')
     if h == 'exit':
         print("Test ended\n")
         break
     h = float(h)
 
-    print('The area of the base is  [cm^2]: ', area_cylinder(r))
-    print('The volume is            [cm^3]: ', volume_cylinder(r, h), '\n')
+    print('The area of the base is [cm^2]: ', area_cylinder(r))
+    print('The volume is [cm^3]:           ', volume_cylinder(r, h), '\n')
