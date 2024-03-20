@@ -2,7 +2,7 @@
 # READ ME SECTION
 
 # DESCRIPTION
-This python program uses the Haversine formula to calculate the great-circle distance between two points - that is, the shortest distance over the Earth's surface - giving an "as-the-crow-flies" distance between the points (ignoring any elevations or obsticals). The Haversine formula accounts for the Earth's curvature to calculate the shortest distance between two points on the surface of a sphere.
+- This python program uses the Haversine formula to calculate the great-circle distance between two points - that is, the shortest distance over the Earth's surface - giving an "as-the-crow-flies" distance between the points (ignoring any elevations or obstacles). The Haversine formula accounts for the Earth's curvature to calculate the shortest distance between two points on the surface of a sphere.
 
 # PARAMETERS
 The 'distance' function takes the following parameters:
@@ -11,17 +11,25 @@ The 'distance' function takes the following parameters:
 - 'signLat2', 'degLat2', 'minLat2': The sign (1 for N/-1 for S), degrees, and minutes of the latitude for the second location.
 - 'signLon2', 'degLon2', 'minLon2': The sign (1 for E/-1 for W), degrees, and minutes of the longitude for the second location.
 
+# NEW FUNCTIONS
+- 'errorExit': Handles errors and exits the program.
+- 'firstFourNumbers': Finds and returns the first four numbers in a string.
+- 'input2haversine': Processes the input strings and returns a list for the haversine formula.
+
 # LIMITATIONS
 - The program does not account for the elevation of the locations.
-- The program does noot account for the Earth's oblateness.
+- The program does not account for the Earth's oblateness.
 - The program does not check the user input for valid latitude and longitude values.
 
 # STRUCTURES
-The program consists of three main functions:
+The program consists of six main functions:
 - 'convert_to_radians': Converts degrees and minutes to radians.
 - 'haversine': Calculates the haversine distance between two points in radians.
 - 'distance': Converts latitudes and longitudes to radians and calculates the distance between the two points in kilometers.
--- Note, that the user only interacts with the 'distance' function. The other two functions are helper functions and are not called directly by the user, but by the 'distance' function.
+- 'errorExit': Handles errors and exits the program.
+- 'firstFourNumbers': Finds and returns the first four numbers in a string.
+- 'input2haversine': Processes the input strings and returns a list for the haversine formula.
+-- Note, that the user only interacts with the 'input2haversine' function. The other functions are helper functions and are not called directly by the user.
 
 # OUTPUT
 The program prints the calculated distances between the pairs of locations. The distances are in kilometers.
