@@ -1,8 +1,4 @@
 # Overview of Python
-
-
-
-
 ## Python Functions
 
 - `float`: converts a string or a number to a floating point number, e.g., `float("3")` returns `3.0`
@@ -51,13 +47,23 @@ print("Hello, World!".replace("World", "Python"))  # returns "Hello, Python!"
 ## Python Modules
 
 - `math`: provides mathematical functions, e.g., `math.sqrt(4)` returns `2`, `math.pi` returns `3.141592653589793`, `math.sin(math.pi/2)` returns `1.0`
+- `random`: provides various functions for generating random numbers. This module uses the pseudo-random number generator function `random()`, which generates a random float number between 0.0 and 1.0. e.g, `random()`: Returns a random float number between 0.0 and 1.0.
 
 ### Examples:
 ```python
 import math
-print(math.sqrt(4))  # returns 2
-print(math.pi)  # returns 3.141592653589793
+print(math.sqrt(4))         # returns 2
+print(math.pi)              # returns 3.141592653589793
 print(math.sin(math.pi/2))  # returns 1.0
+
+import random
+
+
+print(random.random())                  # Generate a random float number between 0.0 and 1.0
+print(random.randint(1, 10))            # Generate a random integer between 1 and 10
+print(random.choice([1, 2, 3, 4, 5]))   # Choose a random element from a list
+random.shuffle([1, 2, 3, 4, 5])         # Shuffle a list
+
 ```
 
 ## Python Operators
@@ -119,17 +125,19 @@ print(x)
 
 ### Examples:
 ```python
-# Python Control Structures
+# control structure: IF-STATEMENT
 if 1 < 2:
-    print("1 is less than 2")  # prints "1 is less than 2"
+    print("1 is less than 2")
 elif 1 > 2:
     print("1 is greater than 2")
 else:
     print("1 is equal to 2")
 
+# control structure: FOR-LOOP
 for i in range(5):
     print(i)  # prints 0, 1, 2, 3, 4
 
+# control structure: WHILE-LOOP
 i = 0
 while i < 5:
     print(i)  # prints 0, 1, 2, 3, 4
@@ -139,7 +147,7 @@ while i < 5:
 
 ## Python Definitions
 
-- **Function heading ("def")**: first line of a function definition, contains the keyword "def", the function name, the parameter list, and a colon
+- **Function heading (`def functionName (agument1, argument2):`)**: first line of a function definition, contains the keyword "def", the function name, the parameter list, and a colon
 - **Function body**: block of statements that define the function
 - **Procedure**: function that does not return a value
 - **Parameter**: variable that receives an argument value
@@ -151,6 +159,10 @@ while i < 5:
 - **Bulk testing**: testing with a large number of test cases, inputted by the user
 - **Edge case**: a test case that is at the boundary of what is expected, e.g., a triangle with all sides of length 0; a triangle with a + b = c (a line)
 - **Debugging**: the process of finding and fixing errors in a program
+- **Matrix**: represented as a nested list, with each sub-list representing a row and the elements of the sub-lists representing the columns. For example, matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]] represents a 3x3 matrix. Python does not have a built-in type for matrices, but they can be handled using nested lists, or using third-party libraries like NumPy.
+- **Aliasing**: multiple variable names point to the same object in memory. When an object is aliased, changes made with one variable name will affect the other. E.g. `a = list(range(10));
+b = a` a nd b can now be used synonymmus.
+- **clone a list**: creating a new list that contains all the elements of the original list. Can be done by using the slicing operator: `a = [1,2,3];b = a[:]`.
 
 ## Python Data Types
 
@@ -164,13 +176,69 @@ while i < 5:
 
 ### Examples:
 ```python
-print(type(42))  # returns <class 'int'>
-print(type(3.14))  # returns <class 'float'>
-print(type("Hello, World!"))  # returns <class 'str'>
-print(type([1, 2, 3]))  # returns <class 'list'>
-print(type((1, 2, 3)))  # returns <class 'tuple'>
-print(type(1 == 1))  # returns <class 'bool'>
-print(type(None))  # returns <class 'NoneType'>
+print(type(42))                 # returns <class 'int'>
+print(type(3.14))               # returns <class 'float'>
+print(type("Hello, World!"))    # returns <class 'str'>
+print(type([1, 2, 3]))          # returns <class 'list'>
+print(type((1, 2, 3)))          # returns <class 'tuple'>
+print(type(1 == 1))             # returns <class 'bool'>
+print(type(None))               # returns <class 'NoneType'>
 ```
 
+
+## Errors:
+**SyntaxError**: This error occurs when Python encounters something that it doesn't understand. This could be due to a typo, incorrect indentation, or forgetting to close a bracket or quote.
+
+**IndentationError**: Python uses indentation to determine the grouping of statements. Incorrect indentation will lead to this error.
+
+**NameError**: This error occurs when Python encounters a variable that has not been defined.
+
+**TypeError**: This error occurs when an operation or function is applied to an object of an inappropriate type.
+
+**ValueError**: This error occurs when a function receives an argument of the correct type but an inappropriate value.
+
+**ZeroDivisionError**: This error occurs when the second operator in the division is zero.
+
+**ImportError**: This error occurs when an import statement fails to find the module definition or when a `from ... import` fails to find a name that is to be imported.
+
+**AttributeError**: This error occurs when attribute reference or assignment fails.
+
+**KeyError**: This error occurs when a dictionary is accessed with a key that does not exist in the dictionary.
+
+**IndexError**: This error occurs when a sequence subscript is out of range.
+
+```python
+print("Hello, World!)
+#This will raise a SyntaxError because the closing quote is missing
+
+def hello():
+print("Hello, World!")
+#This will raise an IndentationError because the print statement is not indented correctly.
+
+print(x)
+#This will raise a NameError if `x` has not been defined.
+   
+"2" + 2
+#This will raise a TypeError because you can't add a string to an integer.
+
+int("Hello, World!")
+# This will raise a ValueError because "Hello, World!" is not a valid integer.
+
+1 / 0
+# This will raise a ZeroDivisionError because division by zero is undefined.
+
+import non_existent_module
+# This will raise an ImportError because `non_existent_module` does not exist.
+
+"Hello, World!".non_existent_method()
+#This will raise an AttributeError because the `non_existent_method` does not exist for strings.
+
+my_dict = {"name": "John"}
+print(my_dict["age"])
+# This will raise a KeyError because "age" is not a key in the dictionary.
+
+my_list = [1, 2, 3]
+print(my_list[3])
+# This will raise an IndexError because the index 3 is out of range for the list.
+```
 
