@@ -161,6 +161,33 @@ while i < 5:
 - **Aliasing**: multiple variable names point to the same object in memory. When an object is aliased, changes made with one variable name will affect the other. E.g. `a = list(range(10));
 b = a` a nd b can now be used synonymmus.
 - **clone a list**: creating a new list that contains all the elements of the original list. Can be done by using the slicing operator: `a = [1,2,3];b = a[:]`.
+- **Hash Table**: also known as a dictionary or associative array, is a data structure that implements an associative array abstract data type, a structure that can map keys to values.
+- **Editor**: software application for creating and modifying code. Examples include Visual Studio Code, Sublime Text, PyCharm and Atom. Most editor also offer the ability to run the code from the edior --> IDE
+- **IDE**: "Integrated Development Environment" is a software application that provides comprehensive facilities to programmers for software development. It normally consists of at least a source code editor, the ability to run the code, build automation tools, and a debugger.
+- **Terminal**: A terminal (also known as a console or command line) is a text-based interface that can be used to input commands directly to a computer system or programming language.
+- **Structured Type**: Structured types are data types that are composed of simpler data types, which are known as primitives. Examples in Python include `lists`, `tuples`, and `dictionaries`.
+- **Classes**: In object-oriented programming, a class is a blueprint for creating objects (a particular data structure), providing initial values for state (member variables or attributes), and implementations of behavior (member functions or methods).
+- **Object-Oriented Programming**: OOP is a programming paradigm that relies on the concept of `classes` and `objects`. It is used to structure a software program into simple, reusable pieces of code blueprints (classes), which are used to create individual instances of objects.
+- **Indexing**: accessing individual elements of a sequence data type (like `strings`, `lists`, and `tuples`) using their position number, which starts from 0.
+- **Slicing**: getting a subset of elements from a sequence data type (like `strings`, `lists`, and `tuples`) by specifying a range of indices.
+- **Methods**: functions that are associated with a particular class. They define the behaviors that an instance of the class can perform with its data.
+- **Parallel Listing**: process of iterating over multiple lists simultaneously. This is typically achieved using the `zip()` function, which pairs the corresponding elements from multiple lists together.
+- **Slicing --> Sub-list**: When slicing is used on a list, it results in a new list that is a subset of the original list. This new list is often referred to as a sub-list.
+
+### Example:
+```python
+#short example of methods in Python
+class Circle:
+    def __init__(self, radius):
+        self.radius = radius
+
+    def area(self):
+        return 3.14 * self.radius ** 2
+
+my_circle = Circle(5)
+print(my_circle.area())  # Outputs: 78.5
+```
+
 
 ## Python Data Types
 
