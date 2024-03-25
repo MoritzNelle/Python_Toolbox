@@ -57,8 +57,6 @@ print(math.pi)              # returns 3.141592653589793
 print(math.sin(math.pi/2))  # returns 1.0
 
 import random
-
-
 print(random.random())                  # Generate a random float number between 0.0 and 1.0
 print(random.randint(1, 10))            # Generate a random integer between 1 and 10
 print(random.choice([1, 2, 3, 4, 5]))   # Choose a random element from a list
