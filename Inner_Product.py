@@ -28,21 +28,17 @@
 - There are no print-statements in the function. The result is returned so that it can be used in further calculations if needed.
 '''
 
-
 def inprod(a, b):
-    # Checks if the lengths of the input lists are equal
     if len(a) != len(b):
         raise ValueError("Vectors must have the same length")
     
     result = 0
-    # Iterates over the elements of the input lists
     for i in range(len(a)):
         result += a[i] * b[i]
     
     return result
 
-a = [3, -2, 0, 1]
-b = [3, 4, 2, -5]
+a = [3, -2, 0,  1]
+b = [3,  4, 2, -5]
 
-# Prints the calculated inner product
 print(inprod(a, b))
