@@ -267,3 +267,33 @@ print(my_list[3])
 # This will raise an IndexError because the index 3 is out of range for the list.
 ```
 
+## Usage of Dictonaties
+
+```python
+# Create a new dictionary
+my_dict = {"name": "Alice", "age": 25, "city": "New York"}
+
+# Access a value by its key
+print(my_dict["name"])  # Outputs: Alice
+
+# Update a value
+my_dict["age"] = 26
+
+# Add a new key-value pair
+my_dict["profession"] = "Engineer"
+
+# Remove a key-value pair
+del my_dict["city"]
+
+# Check if a key exists
+if "name" in my_dict:
+    print("Name is in the dictionary")
+
+# Iterate over keys
+for key in my_dict:
+    print(key)
+
+# Iterate over key-value pairs
+for key, value in my_dict.items():
+    print(key, value)
+```
