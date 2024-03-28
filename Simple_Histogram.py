@@ -32,7 +32,7 @@ import random
 def random_numbers():
     numbers = []
     for _ in range(100):                # The underscore is used to indicate that the loop variable is not used in the loop body.
-        number = random.randint(1, 10)
+        number = random.randint(1, 20)
         numbers.append(number)
     return numbers
 
@@ -44,9 +44,11 @@ def get_frequencies(numbers):
 
 def print_histogram(numbers):
     frequencies = get_frequencies(numbers)
-    for number in range(1, 11):
-        frequency = frequencies.get(number, 0)  #if a number is not present in the list, print the number anyway
-        print(f"{number} {'#' * frequency}") 
+    min_number = min(numbers)
+    max_number = max(numbers)
+    for number in range(min_number, max_number + 1):    # The range function generates a sequence of numbers from min_number to max_number.
+        frequency = frequencies.get(number, 0)
+        print(f"{number} {'#' * frequency}")
 
 # Example usage
 print_histogram(random_numbers())
