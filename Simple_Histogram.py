@@ -31,7 +31,7 @@ import random
 
 def random_numbers():
     numbers = []
-    for _ in range(100):
+    for _ in range(100):                # The underscore is used to indicate that the loop variable is not used in the loop body.
         number = random.randint(1, 10)
         numbers.append(number)
     return numbers
@@ -44,8 +44,9 @@ def get_frequencies(numbers):
 
 def print_histogram(numbers):
     frequencies = get_frequencies(numbers)
-    for number, frequency in sorted(frequencies.items()):
-        print(f"{number} {'#' * frequency}")
+    for number in range(1, 11):
+        frequency = frequencies.get(number, 0)  #if a number is not present in the list, print the number anyway
+        print(f"{number} {'#' * frequency}") 
 
 # Example usage
 print_histogram(random_numbers())
