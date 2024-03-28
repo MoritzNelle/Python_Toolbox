@@ -297,3 +297,91 @@ for key in my_dict:
 for key, value in my_dict.items():
     print(key, value)
 ```
+
+## Write a README-section:
+A read me section consists of the following headers (should always be there and can be used as a way of structuring):
+1. READ ME
+1. DESCRIPTION
+1. PARAMETERS
+1. LIMITATIONS
+1. STRUCTURES
+1. OUTPUT
+
+### exsample function
+- all following examples will refere to this example:
+
+```python
+def common_chars(str1,str2):
+	commons = ''
+	for ch in str1:
+		if ch in str2:
+			if ch not in commons:
+				commons += str(ch)
+	return commons
+```
+
+### READ ME:
+- The subsection READ ME should be a list of:
+  - Functions in the module
+  - Classes and methods
+  - Methods and functions that were imported (and their module)
+- Example:
+```python
+"common_chars function"
+```
+
+
+### DESCRIPTION:
+- What does the function do?
+- How is relevant information/data obtained?
+- What is the output/return value of the function?
+#### Example:
+```python
+"common_chars is a function that compares two textual inputs, supplied through parameters,and returns a string of common  characters found in both inputs."
+```
+
+
+### PARAMETERS:
+- Which parameters the function takes (and their data type)
+- How parameters are used by the function
+#### Example:
+```python
+"str1 - a string value, which should be compared to str2
+str2 - a string value, which should be compared to str1"
+```
+
+
+### LIMITATIONS:
+Supply at least two limitations of the function(s):
+- Type based limitations
+- Efficiency based limitations
+- Potential errors for specific cases
+- Other limitations?
+- real world limitations
+
+#### Example:
+```python
+"- Not exclusively applicable to strings, will work with any iterable, even with some mixed combinations of types
+- Compares all characters, even if a character has already found to be common between str1 and str2
+- If an iteration for str1 contains a non-str type and str2 is of type str, an error will be raised."
+```
+
+### STRUCTURES:
+should inform on the implementation and functionality on any of the following structures and functions:
+- If-elif-else constructs
+- For-loops
+- While-loops
+- Use of the function input
+
+#### Example:
+```python
+" A for-loop was applied to go through each character of the input str1 (or indeed each element of any iterable supplied to str1)
+- An if-statement to check whether the character currently in variable ch from the for-loop is present in str2
+- An if-statement to check whether a character is already in the list of common characters"
+```
+
+
+#### OUTPUTS:
+should inform on any outputs:
+- Return-statements
+- Print-statements (and why it was chosen to use a print-statement)
