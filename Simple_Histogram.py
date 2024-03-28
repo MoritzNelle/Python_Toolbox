@@ -1,12 +1,12 @@
 '''
 READ ME:
 This module provides the following functions:
-- `random_numbers()`: Generates a list of 100 random numbers between -5 and 10.
+- `random_numbers()`: Generates a list of 100 random numbers between 1 and 10.
 - `get_frequencies(numbers)`: Calculates the frequency of each number in a list.
 - `print_histogram(numbers)`: Prints a histogram based on the frequency of numbers.
 
 DESCRIPTION:
-This module is a simple histogram generator. It generates a list of 100 random numbers between -5 and 10, calculates the frequency of each number, and prints a histogram where each bar represents the frequency of a number.
+This module is a simple histogram generator. It generates a list of 100 random numbers between 1 and 10, calculates the frequency of each number, and prints a histogram where each bar represents the frequency of a number.
 
 PARAMETERS:
 - `numbers`: a list of integers. This list is used as the input for both `get_frequencies` and `print_histogram` functions.
