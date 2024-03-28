@@ -6,7 +6,7 @@ READ ME:
 - random module
 
 DESCRIPTION:
-- The Simple_Histogram.py program generates a list of 100 random numbers between 1 and 20, calculates the frequency of each number, and prints a histogram of the frequencies.
+- This module is a simple histogram generator. It generates a list of 100 random numbers between 1 and 10, calculates the frequency of each number, and prints a histogram where each bar represents the frequency of a number between the lowest and highest number in the random list.
 - The random_numbers function generates the list of random numbers.
 - The get_frequencies function calculates the frequency of each number in the list.
 - The print_histogram function prints the histogram.
@@ -17,7 +17,6 @@ PARAMETERS:
 - The print_histogram function takes a list of numbers as a parameter.
 
 LIMITATIONS:
-- The program only works with integers between 1 and 20.
 - The program does not handle non-integer or out-of-range inputs.
 - The program does not provide any way to customize the range of numbers or the number of numbers generated.
 
