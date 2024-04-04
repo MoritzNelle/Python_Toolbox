@@ -29,15 +29,12 @@ OUTPUT:
 def add_matrices(matrix1, matrix2):
     if len(matrix1) != len(matrix2) or len(matrix1[0]) != len(matrix2[0]): # Check if matrices have identical dimensions
         raise ValueError("Matrices must have identical dimensions")
-    
-    if len(matrix1) != len(matrix1[0]) or len(matrix2) != len(matrix2[0]): # Check if matrices are square
-        raise ValueError("Matrices must be square")
 
     result = []
 
     for i in range(len(matrix1)): # Perform element-wise addition
         row = []
-        for j in range(len(matrix1)):
+        for j in range(len(matrix1[i])):
             row.append(matrix1[i][j] + matrix2[i][j])
         result.append(row)
 
@@ -45,7 +42,7 @@ def add_matrices(matrix1, matrix2):
 
 
 # Example usage
-matrix1 = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
-matrix2 = [[9, 8, 7], [6, 5, 4], [3, 2, 1]]
+matrix1 = [[ 35,12,  6],[-32, 5,-26],[10, 8, -1]]
+matrix2 = [[-31,29,-34],[ 12,11,-25],[28,21,-42]]
 result = add_matrices(matrix1, matrix2)
 print(result)
