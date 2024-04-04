@@ -1,6 +1,6 @@
 '''
 READ ME:
-- This module contains the function add_matrices
+- This module contains the function add_matrices()
 
 DESCRIPTION:
 - The function add_matrices performs element-wise addition of two matrices.
@@ -27,15 +27,12 @@ OUTPUT:
 '''
 
 def add_matrices(matrix1, matrix2):
-    # Check if matrices have identical dimensions
-    if len(matrix1) != len(matrix2) or len(matrix1[0]) != len(matrix2[0]):
+    if len(matrix1) != len(matrix2) or len(matrix1[0]) != len(matrix2[0]): # Check if matrices have identical dimensions
         raise ValueError("Matrices must have identical dimensions")
 
-    # Create a new matrix with the same dimensions as the input matrices
     result = []
 
-    # Perform element-wise addition
-    for i in range(len(matrix1)):
+    for i in range(len(matrix1)): # Perform element-wise addition
         row = []
         for j in range(len(matrix1)):
             row.append(matrix1[i][j] + matrix2[i][j])
@@ -43,8 +40,9 @@ def add_matrices(matrix1, matrix2):
 
     return result
 
+
 # Example usage
 matrix1 = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 matrix2 = [[9, 8, 7], [6, 5, 4], [3, 2, 1]]
-result = add_matrices(matrix1, matrix2) # [[10, 10, 10], [10, 10, 10], [10, 10, 10]]
+result = add_matrices(matrix1, matrix2)
 print(result)
