@@ -29,6 +29,9 @@ OUTPUT:
 def add_matrices(matrix1, matrix2):
     if len(matrix1) != len(matrix2) or len(matrix1[0]) != len(matrix2[0]): # Check if matrices have identical dimensions
         raise ValueError("Matrices must have identical dimensions")
+    
+    if len(matrix1) != len(matrix1[0]) or len(matrix2) != len(matrix2[0]): # Check if matrices are square
+        raise ValueError("Matrices must be square")
 
     result = []
 
