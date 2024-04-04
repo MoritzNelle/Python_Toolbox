@@ -32,12 +32,14 @@ def add_matrices(matrix1, matrix2):
         raise ValueError("Matrices must have identical dimensions")
 
     # Create a new matrix with the same dimensions as the input matrices
-    result = [[0] * len(matrix1[0]) for _ in range(len(matrix1))]
+    result = []
 
     # Perform element-wise addition
     for i in range(len(matrix1)):
-        for j in range(len(matrix1[0])):
-            result[i][j] = matrix1[i][j] + matrix2[i][j]
+        row = []
+        for j in range(len(matrix1)):
+            row.append(matrix1[i][j] + matrix2[i][j])
+        result.append(row)
 
     return result
 
