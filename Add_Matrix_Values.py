@@ -32,7 +32,7 @@ def add_matrices(matrix1, matrix2):
 
     result = []
 
-    for i in range(len(matrix1)): # Perform element-wise addition
+    for i in range(len(matrix1)): # Perform element-by-element addition
         row = []
         for j in range(len(matrix1[i])):
             row.append(matrix1[i][j] + matrix2[i][j])
