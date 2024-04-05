@@ -30,13 +30,11 @@ Interaction with the software is done through a command-line interface. After st
 
 ## Getting Started
 
-1. Click on the green `Code` button on the top right of the repository page.
-
+1. Click on the green `Code` button on the top right of the repository page(`https://github.com/CropCoder/Python_Toolbox`).
 2. In the dropdown, click `Download ZIP`.
-
 3. Once the ZIP file is downloaded, extract it to the working directory of your IDE (VS Code, PyCharm, ...).
-
-4. Execute the `Phonebook.py` from your IDE and interface the Software with the terminal.
+4. (delete the files, you are not interested in-you will only need the subfolder `/Software_Phonebook`)
+5. Execute the `Phonebook.py` from your IDE and interface the Software with the terminal.
 
 ## How It Works in the Background
 
