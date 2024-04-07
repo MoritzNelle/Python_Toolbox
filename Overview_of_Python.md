@@ -1,6 +1,96 @@
 # Overview of Python
 
 ## Table of Contents
+- [Overview of Python](#overview-of-python)
+  - [Table of Contents](#table-of-contents)
+  - [Python Functions](#python-functions)
+    - [Examples](#examples)
+  - [Python Modules](#python-modules)
+    - [Examples](#examples)
+  - [Python Operators](#python-operators)
+    - [Examples](#examples)
+  - [Python Control Structures](#python-control-structures)
+    - [Examples](#examples)
+  - [Python Definitions](#python-definitions)
+    - [Example](#example)
+  - [Python Data Types](#python-data-types)
+    - [Examples](#examples)
+  - [Loops](#loops)
+    - [For-Loop](#for-loop)
+    - [While-Loop](#while-loop)
+    - [Break-Statement](#break-statement)
+    - [Continue-Statement](#continue-statement)
+    - [Return-Statement](#return-statement)
+    - [Nested Loops](#nested-loops)
+  - [Best Practices for Loops](#best-practices-for-loops)
+  - [Errors](#errors)
+  - [Usecases with spesific methods](#usecases-with-spesific-methods)
+    - [Dictionarries](#dictionarries)
+    - [Aliasing](#aliasing)
+    - [Slicing](#slicing)
+    - [Lists](#lists)
+    - [Execution limitation when calling a function](#execution-limitation-when-calling-a-function)
+    - [File Handling](#file-handling)
+      - [Different modes for opening a file](#different-modes-for-opening-a-file)
+    - [Local and Global Variables](#local-and-global-variables)
+  - [Own Modules](#own-modules)
+  - [Write a README-section](#write-a-readme-section)
+    - [exsample function](#exsample-function)
+    - [READ ME](#read-me)
+    - [DESCRIPTION](#description)
+      - [Example](#example)
+    - [PARAMETERS](#parameters)
+      - [Example](#example)
+    - [LIMITATIONS](#limitations)
+      - [Example](#example)
+    - [STRUCTURES](#structures)
+      - [Example](#example)
+      - [OUTPUTS](#outputs)
+<a name="overview-of-python"></a>
+<a name="table-of-contents"></a>
+<a name="python-functions"></a>
+<a name="examples"></a>
+<a name="python-modules"></a>
+<a name="examples"></a>
+<a name="python-operators"></a>
+<a name="examples"></a>
+<a name="python-control-structures"></a>
+<a name="examples"></a>
+<a name="python-definitions"></a>
+<a name="example"></a>
+<a name="python-data-types"></a>
+<a name="examples"></a>
+<a name="loops"></a>
+<a name="for-loop"></a>
+<a name="while-loop"></a>
+<a name="break-statement"></a>
+<a name="continue-statement"></a>
+<a name="return-statement"></a>
+<a name="nested-loops"></a>
+<a name="best-practices-for-loops"></a>
+<a name="errors"></a>
+<a name="usecases-with-spesific-methods"></a>
+<a name="dictionarries"></a>
+<a name="aliasing"></a>
+<a name="slicing"></a>
+<a name="lists"></a>
+<a name="execution-limitation-when-calling-a-function"></a>
+<a name="file-handling"></a>
+<a name="different-modes-for-opening-a-file"></a>
+<a name="local-and-global-variables"></a>
+<a name="own-modules"></a>
+<a name="write-a-readme-section"></a>
+<a name="exsample-function"></a>
+<a name="read-me"></a>
+<a name="description"></a>
+<a name="example"></a>
+<a name="parameters"></a>
+<a name="example"></a>
+<a name="limitations"></a>
+<a name="example"></a>
+<a name="structures"></a>
+<a name="example"></a>
+<a name="outputs"></a>
 
 
 ## Python Functions
