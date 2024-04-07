@@ -525,6 +525,15 @@ for line in txtFile:
 print(allLines)
 txtFile.close()
 ```
+#### Different modes for opening a file:
+- `r`: read mode (default), opens a file for reading
+- `w`: write mode, opens a file for writing. If the file does not exist, it creates a new file. If the file exists, it truncates the file to zero length.
+- `a`: append mode, opens a file for appending. If the file does not exist, it creates a new file. If the file exists, it appends data to the file.
+- `b`: binary mode, opens a file in binary mode.
+- `t`: text mode (default), opens a file in text mode.
+- `+`: read/write mode, opens a file for reading and writing. (e.g., `r+`, `w+`, `a+`)
+
+
 ### Local and Global Variables
 Variables in Python can be either local or global.
 - **Local variables** are defined inside a function and can only be accessed within that function.
