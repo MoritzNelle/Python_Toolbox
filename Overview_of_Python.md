@@ -1,4 +1,8 @@
 # Overview of Python
+
+## Table of Contents
+
+
 ## Python Functions
 
 - `float`: converts a string or a number to a floating point number, e.g., `float("3")` returns `3.0`
@@ -159,7 +163,7 @@ while i < 5:
 - **Debugging**: the process of finding and fixing errors in a program
 - **Matrix**: represented as a nested list, with each sub-list representing a row and the elements of the sub-lists representing the columns. For example, matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]] represents a 3x3 matrix. Python does not have a built-in type for matrices, but they can be handled using nested lists, or using third-party libraries like NumPy.
 - **Aliasing**: multiple variable names point to the same object in memory. When an object is aliased, changes made with one variable name will affect the other. E.g. `a = list(range(10));
-b = a` a nd b can now be used synonymmus.
+b = a` a and b can now be used synonymmus.
 - **clone a list**: creating a new list that contains all the elements of the original list. Can be done by using the slicing operator: `a = [1,2,3];b = a[:]`.
 - **Hash Table**: also known as a dictionary or associative array, is a data structure that implements an associative array abstract data type, a structure that can map keys to values.
 - **Editor**: software application for creating and modifying code. Examples include Visual Studio Code, Sublime Text, PyCharm and Atom. Most editor also offer the ability to run the code from the edior --> IDE
@@ -171,8 +175,12 @@ b = a` a nd b can now be used synonymmus.
 - **Indexing**: accessing individual elements of a sequence data type (like `strings`, `lists`, and `tuples`) using their position number, which starts from 0.
 - **Slicing**: getting a subset of elements from a sequence data type (like `strings`, `lists`, and `tuples`) by specifying a range of indices.
 - **Methods**: functions that are associated with a particular class. They define the behaviors that an instance of the class can perform with its data.
-- **Parallel Listing**: process of iterating over multiple lists simultaneously. This is typically achieved using the `zip()` function, which pairs the corresponding elements from multiple lists together.
+- **Parallel Listing**: process of iterating over multiple lists simultaneously.
 - **Slicing --> Sub-list**: When slicing is used on a list, it results in a new list that is a subset of the original list. This new list is often referred to as a sub-list.
+- **Computer Program**: Computes an output from an input, and environment variables/side effects.
+- **Functions versus a software program**: A function is a block of code that performs a specific task and returns a result. A software program is a collection of functions and data that work together to perform a bigger specific task.
+- **File Object**: Represents a file on the file system. It is used to read from and write to files. `fileObject = open("filename", "mode")`
+
 
 ### Example:
 ```python
@@ -209,6 +217,78 @@ print(type((1, 2, 3)))          # returns <class 'tuple'>
 print(type(1 == 1))             # returns <class 'bool'>
 print(type(None))               # returns <class 'NoneType'>
 ```
+
+## Loops
+ 
+### For-Loop
+Iterate over a sequence of elements
+```python
+for i in range(5):
+    print(i)  # prints 0, 1, 2, 3, 4
+```
+
+### While-Loop
+Execute a block of code as long as a condition is true
+```python
+i = 0
+while i < 5:
+    print(i)  # prints 0, 1, 2, 3, 4
+    i += 1
+```
+
+### Break-Statement
+Exit a loop
+```python
+while True:
+    print("Hello, World!")
+    break
+```
+
+### Continue-Statement
+Skip the rest of the loop and continue with the next iteration
+```python
+for i in range(5):
+    if i == 2:
+        continue
+    print(i)  # prints 0, 1, 3, 4
+```
+
+### Return-Statement
+Returns a value from inside a loop
+```python
+for i in range(99999):
+    if i == 42:
+        return i    # returns 42 and exits the loop before 99999 iterations
+```
+
+### Nested Loops
+Loop inside another loop
+```python
+for i in range(3):
+    for j in range(3):
+        print(i, j)  # prints (0, 0), (0, 1), (0, 2), (1, 0), (1, 1), (1, 2), (2, 0), (2, 1), (2, 2)
+```
+
+## Best Practices for Loops
+- `break`, `returns`, and `continue` inside a loop
+  - may increase efficiency, but can make the code harder to read
+  - break and return are (allmost) always unnecessary in a `while`-loop
+
+
+Discouraged (Example):
+```python
+while True:
+    if condition:
+        break
+    # do something
+```
+
+Recommended(Example):
+```python
+while not condition:
+    # do something
+```
+
 
 
 ## Errors:
@@ -267,8 +347,9 @@ print(my_list[3])
 # This will raise an IndexError because the index 3 is out of range for the list.
 ```
 
-## Usage of Dictonaties
+## Usecases with spesific methods
 
+### Dictionarries
 ```python
 # Create a new dictionary
 my_dict = {"name": "Alice", "age": 25, "city": "New York"}
@@ -296,6 +377,191 @@ for key in my_dict:
 # Iterate over key-value pairs
 for key, value in my_dict.items():
     print(key, value)
+```
+
+### Aliasing
+```python
+# Aliasing, when two variables point to the same object in memory
+a = [1, 2, 3]   # a is a list with the elements 1, 2, 3
+b = a           # b is now an alias for a (both point to the same list in memory)
+a += [4]        # a is now [1, 2, 3, 4]
+print(b)        # prints [1, 2, 3, 4], b has been updated as well
+a = a + [5]     # a is now [1, 2, 3, 4, 5]
+print(b)        # prints [1, 2, 3, 4], b has not been updated, as a now points to a new list in memory (aliasing is broken, due to the use of the "+"-operator)
+
+```
+
+
+### Slicing
+```python
+# Slicing, getting a subset of elements from a data-sequence (e.g., list, string, tuple)
+
+# Syntax: data-sequence[start:stop:step]
+    # start: the index where the slice starts (inclusive)
+    # stop: the index where the slice ends (exclusive)
+    # step(optional): the step size for the slice (default is 1)
+
+myList = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+myList[2:5]     # returns [2, 3, 4]
+myList[:5]      # returns [0, 1, 2, 3, 4]
+myList[5:]      # returns [5, 6, 7, 8, 9]
+myList[2:8:2]   # returns [2, 4, 6]
+myList[-1]      # returns 9 (last element)
+myList[-3:]     # returns [7, 8, 9] (last three elements)
+myList[:-3]     # returns [0, 1, 2, 3, 4, 5, 6] (all elements except the last three)
+myList[::-1]    # returns [9, 8, 7, 6, 5, 4, 3, 2, 1, 0] (reversed list)
+myList[8:3:-2]  # returns [8, 6, 4] (elements from index 8 to 3 with a step of -2)
+```
+
+
+### Lists
+```python
+#Lists are mutable, ordered collections of elements that can be accessed, changed, and iterated via indexing.
+
+#General list
+[ 10, 13, 27, 148 ]
+[ ‘john’, ‘mary’, ‘fred’, ‘harry’, ‘liz’]
+[‘Wageningen’, 2500, 21.8]
+
+#Empty list
+[]
+[ ]
+
+#One-element list
+[ 10, ] # trailing comma is allowed, but not required
+
+
+#initialize a list with a fixed number of elements
+[ 0 ] * 5   # [ 0, 0, 0, 0, 0 ]
+[ 0, 0, 0, 0, 0 ] # same as above
+
+#ADD ELEMENTS TO A LIST
+myList = [ 10, 20, 30 ]     #example list
+
+myList.append( 40 )         # a is now [ 10, 20, 30, 40 ]
+myList = myList + [ 40 ]    # a is now [ 10, 20, 30, 40]
+myList += [ 40 ]            # a is now [ 10, 20, 30, 40]
+myList = [0] + myList       # a is now [ 0, 10, 20, 30]
+myList.insert( 2, 15 )      # a is now [ 10, 15, 20, 30]
+myList[3:3] = [ 25 ]        # a is now [ 10, 20, 25, 30]
+myList[1:2] = [15]          # a is now [ 15, 20, 25, 30]
+
+
+#REMOVE ELEMENTS FROM A LIST
+myList = [ 10, 20, 30, 40 ] #example list
+
+myList[2:3] = []            # a is now [ 10, 20, 40 ]
+myList.remove( 30 )         # a is now [ 10, 20, 40 ]
+del myList[ 2 ]             # a is now [ 10, 20, 40 ], del() does not return the removed element
+myList.pop( 2 )             # a is now [ 10, 20, 40 ], pop() returns the removed element (30)
+
+
+#MISSCELLANEOUS
+myList = [0,1,2,3,4,5,6,7,8,9] #example list
+
+myList.count( 10 )          # 1 #count the number of occurrences of an element in a list
+myList.index( 5 )           # 5 #find the index of the first occurrence of an element in a list
+myList.reverse()            # [ 9, 8, 7, 6, 5, 4, 3, 2, 1, 0 ] #reverse the order of elements in a list
+myList.sort()               # [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ] #sort the elements in a list
+myList.sort( reverse = True )# [ 9, 8, 7, 6, 5, 4, 3, 2, 1, 0 ] #sort the elements in a list in reverse order
+
+myList = list( "hello" )    # [ 'h', 'e', 'l', 'l', 'o' ] #convert a string to a list of characters
+
+
+#"change" a tuple (tuples are immutable, so you can't actually change them, but you can convert them to a list, change the list, and convert the list back to a tuple)
+myTuple = (1, 2, 3)         # (1, 2, 3) #example tuple
+myList = list( myTuple )    # [ 1, 2, 3 ] #convert a tuple to a list (can be changed, unlike a tuple)
+myList[1:1] = [1.5]
+myTuple = tuple(myList)     # (1, 2, 3) #convert a list back to a tuple (immutable)
+
+#Function to convert a paralell list
+names = ["Io", "Europa", "Ganymede", "Callisto"]
+years = [1610, 1610, 1610, 1610]
+masses = [8.9319e+22, 4.8000e+22, 1.4819e+23, 1.0759e+23]
+
+def convertParallelList(names, years, masses):
+    result = [None]*len(names)
+    for i in range(len(names)):
+        result[i] = (names[i], years[i], masses[i])
+    return result
+
+    #returns: [('Io', 1610, 8.9319e+22),
+    #          ('Europa', 1610, 4.8e+22),
+    #          ('Ganymede', 1610, 1.4819e+23),
+    #          ('Callisto', 1610, 1.0759e+23)]
+
+
+```
+### Execution limitation when calling a function
+Sometimes, you may want to limit the execution of a function to a specific context or environment. This can be achieved by using a decorator that checks the execution environment before running the function. This is commonly used when:
+- a test function should only run when the script is executed directly, not when it is imported as a module
+- a function should only run on a specific operating system
+- a function should only run in a specific environment (e.g., development, production)
+Here's an example of a decorator that limits the execution of a function to a specific operating system:
+
+```python
+print("Hello, World!")
+if __name__ == "__main__" 
+    print("This function was executed directly.")
+    # This code will only run if the script is executed directly, not if it is imported as a module.
+```
+
+### File Handling
+Allows to read and write data to and from files. Python provides built-in functions for file handling, such as `open()`, `read()`, `write()`, and `close()`. Here's an example of reading/writing data from/to a txt-file:
+
+```python
+# Create a new file and write data to it
+txtFile = open("data.txt", "w")
+for line in range(10):
+    txtFile.write(f"Line {line}\n")
+txtFile.close()
+
+# Read data from an existing file
+txtFile = open("data.txt", "r")
+allLines = []
+for line in txtFile:
+    thisLine = line.strip()
+    allLines.append(thisLine)
+print(allLines)
+txtFile.close()
+```
+### Local and Global Variables
+Variables in Python can be either local or global.
+- **Local variables** are defined inside a function and can only be accessed within that function.
+- **Global variables** are defined outside of any function and can be accessed from anywhere in the program.
+Here's an example of local and global variables:
+
+```python
+theNumber = 3           # global variable
+
+def addTheNumber(x):        # local variable:
+    theNumber = 5           # - does not change the global variable
+    result = x + theNumber  # - only exists within the function
+    return result           # - overrides the global variable within the function
+
+a = 2
+b = addTheNumber(a)
+print(b)                    # Outputs: 7
+print (a + theNumber)       # Outputs: 5
+```
+## Own Modules
+A module is a file containing Python definitions and statements. The file name is the module name with the suffix `.py` appended.
+If a module from the user shall be imported, the module must be in the same directory as the script that imports it, or the module must be in a directory that is in the Python path.
+Here's an example of creating and importing a module:
+
+```python
+# Create a new module in the File: myModule.py
+def myFunction():
+    return("Hello, World!")
+
+if __name__ == "__main__":  # This code will only run if the script is executed directly, not if it is imported as a module, common practice to test the module, and to avoid running the test when the module is imported.
+    print myFunction()
+```
+
+```python
+# Import the module
+import myModule
+print (myModule.myFunction())   # Prints: "Hello, World!"
 ```
 
 ## Write a README-section:
