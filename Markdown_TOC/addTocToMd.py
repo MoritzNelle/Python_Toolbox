@@ -76,29 +76,7 @@ def writeToc(toc, filePath):
             print("Table of contents not added. Please add a 'Table of Contents' heading in the markdown file.")
             break
 
-
-'''
-def detectToc(mdFileCopy):
-    toc_start = None
-    toc_end = None
-
-    for i in range(len(mdFileCopy)):
-        if "Table of Contents" in mdFileCopy[i] and ("- [" in mdFileCopy[i+1] or "<a name" in mdFileCopy[i+1]):
-            toc_start = i
-            for j in range(i, len(mdFileCopy)):
-                if "- [" not in mdFileCopy[j] and "<a name" not in mdFileCopy[j]:
-                    toc_end = j
-                    break
         
-    if toc_start is not None and toc_end is not None:
-        del mdFileCopy[toc_start:toc_end+1]
-        print("Old TOC detected and deleted successfully.")
-    else:
-        print("No old TOC found.")
-
-    return mdFileCopy
-'''
-            
 if __name__ == "__main__":
     filePath = input("Enter the file path: ")
     toc = generate_toc(filePath)
