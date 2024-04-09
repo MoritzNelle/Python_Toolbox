@@ -644,6 +644,90 @@ b = addTheNumber(a)
 print(b)                    # Outputs: 7
 print (a + theNumber)       # Outputs: 5
 ```
+
+### Regular Expressions
+Sequences of characters that define a search pattern. They are used to search for specific patterns in text data. Python provides the `re` module for working with regular expressions.
+
+- `*`:  zero or more occurrences of the pattern
+- `+`: one or more occurrences of the pattern
+- `?`: zero or one occurrence of the pattern
+- `.`: any character except a newline
+- `^`: start of a string
+- `$`: end of a string
+- `[aeiou]`: any vowel character
+- `[^aeiou]`: any non-vowel character
+- `{2,3}`: 2 to 3 occurrences of the pattern
+- `\bword\b`: a specific word
+- `\bword\b`: a specific word ignoring case
+
+Here are some examples of using regular expressions in Python:
+
+```python
+import re
+
+# Matching a pattern in a string
+pattern = r"abc"  # The pattern to match
+string = "abcdefg"  # The string to search in
+match = re.search(pattern, string)  # Search for the pattern in the string
+if match:
+    print("Pattern found!")
+else:
+    print("Pattern not found.")
+
+# Matching multiple occurrences of a pattern in a string
+pattern = r"ab"  # The pattern to match
+string = "ababab"  # The string to search in
+matches = re.findall(pattern, string)  # Find all occurrences of the pattern in the string
+print(matches)  # Output: ['ab', 'ab', 'ab']
+```
+
+```python
+# Matching a pattern at the start of a string
+pattern = r"^abc"  # The pattern to match
+string = "abcdefg"  # The string to search in
+match = re.search(pattern, string)  # Search for the pattern at the start of the string
+if match:
+    print("Pattern found at the start!")
+else:
+    print("Pattern not found at the start.")
+```
+
+```python
+# Matching a pattern at the end of a string
+pattern = r"abc$"  # The pattern to match
+string = "abcdefg"  # The string to search in
+match = re.search(pattern, string)  # Search for the pattern at the end of the string
+if match:
+    print("Pattern found at the end!")
+else:
+    print("Pattern not found at the end.")
+```
+
+```python
+# Matching any character
+pattern = r"."  # The pattern to match any character
+string = "abcdefg"  # The string to search in
+matches = re.findall(pattern, string)  # Find all occurrences of any character in the string
+print(matches)  # Output: ['a', 'b', 'c', 'd', 'e', 'f', 'g']
+```
+
+```python
+# Matching a specific character
+pattern = r"a"  # The pattern to match the character 'a'
+string = "abcdefg"  # The string to search in
+matches = re.findall(pattern, string)  # Find all occurrences of the character 'a' in the string
+print(matches)  # Output: ['a']
+```
+
+```python
+# Matching a character from a specific set
+pattern = r
+```
+
+
+
+
+
 ## Own Modules
 A module is a file containing Python definitions and statements. The file name is the module name with the suffix `.py` appended.
 If a module from the user shall be imported, the module must be in the same directory as the script that imports it, or the module must be in a directory that is in the Python path.
