@@ -4,17 +4,17 @@
 - [Overview of Python](#overview-of-python)
   - [Table of Contents](#table-of-contents)
   - [Python Functions](#python-functions)
-    - [Examples](#examples)
+    - [Examples:](#examples)
   - [Python Modules](#python-modules)
-    - [Examples](#examples)
+    - [Examples:](#examples-1)
   - [Python Operators](#python-operators)
-    - [Examples](#examples)
+    - [Examples:](#examples-2)
   - [Python Control Structures](#python-control-structures)
-    - [Examples](#examples)
+    - [Examples:](#examples-3)
   - [Python Definitions](#python-definitions)
-    - [Example](#example)
+    - [Example:](#example)
   - [Python Data Types](#python-data-types)
-    - [Examples](#examples)
+    - [Examples:](#examples-4)
   - [Loops](#loops)
     - [For-Loop](#for-loop)
     - [While-Loop](#while-loop)
@@ -23,7 +23,7 @@
     - [Return-Statement](#return-statement)
     - [Nested Loops](#nested-loops)
   - [Best Practices for Loops](#best-practices-for-loops)
-  - [Errors](#errors)
+  - [Errors:](#errors)
   - [Usecases with spesific methods](#usecases-with-spesific-methods)
     - [Dictionarries](#dictionarries)
     - [Aliasing](#aliasing)
@@ -31,66 +31,26 @@
     - [Lists](#lists)
     - [Execution limitation when calling a function](#execution-limitation-when-calling-a-function)
     - [File Handling](#file-handling)
-      - [Different modes for opening a file](#different-modes-for-opening-a-file)
+      - [Different modes for opening a file:](#different-modes-for-opening-a-file)
     - [Local and Global Variables](#local-and-global-variables)
+    - [Regular Expressions](#regular-expressions)
+  - [Python OOP](#python-oop)
+    - [Key Concepts of OOP:](#key-concepts-of-oop)
+    - [Advantages of OOP:](#advantages-of-oop)
+    - [Disadvantages of OOP:](#disadvantages-of-oop)
   - [Own Modules](#own-modules)
-  - [Write a README-section](#write-a-readme-section)
+  - [Write a README-section:](#write-a-readme-section)
     - [exsample function](#exsample-function)
-    - [READ ME](#read-me)
-    - [DESCRIPTION](#description)
-      - [Example](#example)
-    - [PARAMETERS](#parameters)
-      - [Example](#example)
-    - [LIMITATIONS](#limitations)
-      - [Example](#example)
-    - [STRUCTURES](#structures)
-      - [Example](#example)
-      - [OUTPUTS](#outputs)
-<a name="overview-of-python"></a>
-<a name="table-of-contents"></a>
-<a name="python-functions"></a>
-<a name="examples"></a>
-<a name="python-modules"></a>
-<a name="examples"></a>
-<a name="python-operators"></a>
-<a name="examples"></a>
-<a name="python-control-structures"></a>
-<a name="examples"></a>
-<a name="python-definitions"></a>
-<a name="example"></a>
-<a name="python-data-types"></a>
-<a name="examples"></a>
-<a name="loops"></a>
-<a name="for-loop"></a>
-<a name="while-loop"></a>
-<a name="break-statement"></a>
-<a name="continue-statement"></a>
-<a name="return-statement"></a>
-<a name="nested-loops"></a>
-<a name="best-practices-for-loops"></a>
-<a name="errors"></a>
-<a name="usecases-with-spesific-methods"></a>
-<a name="dictionarries"></a>
-<a name="aliasing"></a>
-<a name="slicing"></a>
-<a name="lists"></a>
-<a name="execution-limitation-when-calling-a-function"></a>
-<a name="file-handling"></a>
-<a name="different-modes-for-opening-a-file"></a>
-<a name="local-and-global-variables"></a>
-<a name="own-modules"></a>
-<a name="write-a-readme-section"></a>
-<a name="exsample-function"></a>
-<a name="read-me"></a>
-<a name="description"></a>
-<a name="example"></a>
-<a name="parameters"></a>
-<a name="example"></a>
-<a name="limitations"></a>
-<a name="example"></a>
-<a name="structures"></a>
-<a name="example"></a>
-<a name="outputs"></a>
+    - [READ ME:](#read-me)
+    - [DESCRIPTION:](#description)
+      - [Example:](#example-1)
+    - [PARAMETERS:](#parameters)
+      - [Example:](#example-2)
+    - [LIMITATIONS:](#limitations)
+      - [Example:](#example-3)
+    - [STRUCTURES:](#structures)
+      - [Example:](#example-4)
+      - [OUTPUTS:](#outputs)
 
 
 
@@ -724,9 +684,71 @@ print(matches)  # Output: ['a']
 pattern = r
 ```
 
+## Python OOP
+Object-Oriented Programming (OOP) is a programming paradigm that relies on the concept of classes and objects. It is used to structure a software program into simple, reusable pieces of code blueprints (classes), which are used to create individual instances of objects. Here are some key concepts in OOP:
+
+### Key Concepts of OOP:
+- **Class**: a blueprint for creating objects (a particular data structure), providing initial values for state (member variables or attributes), and implementations of behavior (member functions or methods).
+- **Object**: an instance of a class, which can contain variables, methods, and other data.
+- **Method**: a function that is associated with a particular class. It defines the behaviors that an instance of the class can perform
+- **__init__**: a special method in Python classes that is called when a new instance of the class is created. It is used to initialize the object's attributes.
+- **self**: a reference to the current instance of the class. It is used to access variables and methods of the class within the class definition.
+- **dot-operator**: used to access attributes and methods of an object. E.g., `object.attribute` or `object.method()`. Analogy: Internet domain names are separated by dots, e.g., `www.google...` (i.e. search google in the World Wide Web).
+
+### Advantages of OOP:
+- **Modularity**: code can be divided into smaller, reusable pieces
+- **Flexibility**: classes can be easily modified and extended
+- **Reusability**: classes can be reused in other parts of the program
+- **Readability**: OOP code is easier to read and understand
+- **Encapsulation**: data is kept private and only accessible through methods
+- **Inheritance**: classes can inherit attributes and methods from other classes
+  
+### Disadvantages of OOP:
+- **Complexity**: OOP can be more complex than procedural programming
+  - Learning curve: OOP can have a steeper learning curve for beginners
+- **Performance**: OOP can be slower than procedural programming
+  - Overhead: OOP can have more overhead due to the use of objects and methods
+
+```python
+import math
+
+class Triangle:
+
+# CLASS CONSTRUCTOR (initilizer):
+# A class constructor is a special method in Python classes that is automatically called #when a new instance of the class is created.
+# The constructor method is named __init__ and is used to initialize the attributes #(variables) of the class.
+# In this case, the Triangle class constructor takes two parameters: point_b and point_c, #and assigns them to the corresponding attributes of the class.
+
+# SELF:
+# The self parameter is a reference to the current instance of the class.
+# E.g., self.point_b refers to the point_b attribute of the current instance of the #Triangle class.
+# Syntax: def __init__(self, param1, param2, ...): 
+    # self is a reference to the current #instance of the class
+    # instance variable are declared by self.var_name = var_name
+
+    def __init__(self, point_b, point_c):   # constructor
+        self.point_b = point_b              # declare instance variable
+        self.point_c = point_c              # -"-
+
+# METHODS:
+# Methods are functions defined inside a class that operate on the attributes(variables) of the class.
+# They are called using the dot notation (self.atribute) on an instance of the class, e.g., triangle1.calculate_circumference().
+
+    def calculate_circumference(self):      # method
+        circumference = math.sqrt((self.point_b[0] - self.point_c[0])**2 + (self.point_b[1] - self.point_c[1])**2) + math.sqrt(self.point_b[0]**2 + self.point_b[1]**2) + math.sqrt(self.point_c[0]**2 + self.point_c[1]**2)    # formula for circumference
+        return circumference
+
+    def calculate_area(self):               # well ... another method
+        area = abs(self.point_b[0] * self.point_c[1] - self.point_c[0] * self.point_b[1]) / 2   # formula for area
+        return area
 
 
-
+# Test code
+if __name__ == "__main__":
+    triangle1 = Triangle((11,5), (1,3))                                  # create an object of the class Triangle
+    print(f"Circumference: \t{triangle1.calculate_circumference()}")    # call the method calculate_circumference from the class Triangle for the object triangle1
+    print(f"Area: \t\t{triangle1.calculate_area()}")                    # call the method calculate_area ...
+```
 
 ## Own Modules
 A module is a file containing Python definitions and statements. The file name is the module name with the suffix `.py` appended.
