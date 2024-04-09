@@ -55,19 +55,16 @@ class Triangle:
 # They are called using the dot notation (self.atribute) on an instance of the class, e.g., triangle1.calculate_circumference().
 
     def calculate_circumference(self):      # method
-        dx = self.point_c[0] - self.point_b[0]
-        dy = self.point_c[1] - self.point_b[1]
-        side_length = math.sqrt(dx**2 + dy**2)
-        circumference = side_length * 2 + math.sqrt(self.point_b[0]**2 + self.point_b[1]**2) + math.sqrt(self.point_c[0]**2 + self.point_c[1]**2) # formula for circumference
+        circumference = math.sqrt((self.point_b[0] - self.point_c[0])**2 + (self.point_b[1] - self.point_c[1])**2) + math.sqrt(self.point_b[0]**2 + self.point_b[1]**2) + math.sqrt(self.point_c[0]**2 + self.point_c[1]**2)    # formula for circumference
         return circumference
 
-    def calculate_area(self):                   # well ... another method
+    def calculate_area(self):               # well ... another method
         area = abs(self.point_b[0] * self.point_c[1] - self.point_c[0] * self.point_b[1]) / 2   # formula for area
         return area
 
 
 # Test code
 if __name__ == "__main__":
-    triangle1 = Triangle((0,2), (1,1))                                  # create an object of the class Triangle
+    triangle1 = Triangle((11,5), (1,3))                                  # create an object of the class Triangle
     print(f"Circumference: \t{triangle1.calculate_circumference()}")    # call the method calculate_circumference from the class Triangle for the object triangle1
     print(f"Area: \t\t{triangle1.calculate_area()}")                    # call the method calculate_area ...
