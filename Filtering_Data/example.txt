@@ -1,0 +1,31 @@
+This is a test file.
+It contains various lines for testing purposes.
+
+1. Test case: listing all lines where a colon (":") is not immediately preceded by a word.
+Regular expression: (?<!\w):
+This line does not have a colon at the end
+This line: has a colon at the end
+Another line without a colon
+
+2. Test case: stripping all comment lines from a Python program.
+Regular expression: ^\s*#.*$
+# This is a comment line
+print("This is a Python program")
+# Another comment line
+x = 10  # This is also a comment
+
+3. Test case: listing all lines where one or both of the words "Latitude" and "Longitude" are missing.
+Regular expression: ^(?!.*\bLatitude\b)(?!.*\bLongitude\b).*$
+This line contains both Latitude and Longitude
+This line only has Latitude
+This line only has Longitude
+This line does not have either Lat... or Long...
+
+4. Test case: showing the section headers in an HTML-file, supposing each section header occupies one line; section headers are surrounded by tags "<h#>" and "</h#>" with "#" a number 1–6
+Regular expression: ^<h[1-6]>.*<\/h[1-6]>$
+<h1>Section 1</h1>
+This is the content of section 1.
+<h2>Section 2</h2>
+This is the content of section 2.
+<h3>Section 3</h3>
+This is the content of section 3.
