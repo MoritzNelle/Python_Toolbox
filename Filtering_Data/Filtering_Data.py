@@ -6,8 +6,6 @@ READ ME:
 
 DESCRIPTION:
 - The function 'filter_data' filters lines from an input file based on a regular expression pattern and writes the filtered lines to an output file.
-- The function reads the input file line by line, checks each line against the provided pattern, and writes the line to the output file if it matches (or doesn't match, based on the include_flag).
-- The function returns no value but prints the filtered lines to the console.
 
 PARAMETERS:
 - 'input_file' (str): The name of the input file to be read.
