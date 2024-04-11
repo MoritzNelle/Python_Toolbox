@@ -108,7 +108,7 @@ if __name__ == '__main__':
     print("Latitude (radians):\t", city.get_lat_lon_radians())      # Get the latitude and longitude in radians
     print("Nested tuple:\t\t", city.get_nested_tuple())             # Get the nested tuple representation
 
-    print("Latitude:\t\t",city.set_latitude_radians(0.7112216701877361))            # Set the latitude in radians
-    print("Longitude:\t\t",city.set_longitude_radians(1.2915436464758034))          # Set the longitude in radians
+    print("Latitude:\t\t",city.set_latitude_radians(0.7112216701877361))     # Set the latitude in radians
+    print("Longitude:\t\t",city.set_longitude_radians(1.2915436464758034))   # Set the longitude in radians
 
     print()
