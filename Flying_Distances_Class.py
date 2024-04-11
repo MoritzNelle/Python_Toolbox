@@ -1,4 +1,4 @@
-# For all, how are reeding this on GitHub, please note that this code is part of a university course... Don't question the logic, just accept it.
+# For all, who are reading this on GitHub, please note that this code is part of a university course... Don't question the necessity of the code, just enjoy the code itself. ;)
 
 '''
 READ ME:

@@ -692,6 +692,7 @@ Object-Oriented Programming (OOP) is a programming paradigm that relies on the c
 - **Object**: an instance of a class, which can contain variables, methods, and other data.
 - **Method**: a function that is associated with a particular class. It defines the behaviors that an instance of the class can perform
 - **__init__**: a special method in Python classes that is called when a new instance of the class is created. It is used to initialize the object's attributes.
+- **__str__**: a special method in Python classes that is called when the object is converted to a string. It is used to define the string representation of the object.
 - **self**: a reference to the current instance of the class. It is used to access variables and methods of the class within the class definition.
 - **dot-operator**: used to access attributes and methods of an object. E.g., `object.attribute` or `object.method()`. Analogy: Internet domain names are separated by dots, e.g., `www.google...` (i.e. search google in the World Wide Web).
 
