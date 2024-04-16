@@ -59,7 +59,10 @@ def update(frame):
     ax2.clear()
     
     # Plot the trajectory on the left subplot
-    ax1.plot(x_coords[:frame], y_coords[:frame], color='blue')
+    ax1.plot(x_coords[:frame], y_coords[:frame], color='lightgrey')
+    cmin = min(concentration)
+    cmax = max(concentration)
+    ax1.scatter(x_coords[:frame], y_coords[:frame], c = concentration[:frame], s = 300, cmap = 'coolwarm', vmin = cmin, vmax = cmax)
     ax1.set_title('UAV Trajectory')
     ax1.set_xlabel('x-coordinate')
     ax1.set_ylabel('y-coordinate')
