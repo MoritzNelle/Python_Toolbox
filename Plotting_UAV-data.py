@@ -1,39 +1,35 @@
 '''
 READ ME:
-- This module contains the following functions:
-    - pandas.read_csv
-    - matplotlib.pyplot.subplots
-    - matplotlib.pyplot.tight_layout
-    - matplotlib.pyplot.show
-- The module imports pandas and matplotlib.pyplot
+- This module contains the following functions: update, and the script to read data and create an animated plot.
+- It imports pandas, matplotlib.pyplot, and matplotlib.animation.
 
 DESCRIPTION:
-- This script reads UAV data from a text file, extracts relevant data columns, and plots the UAV trajectory and sensor data over time.
-- The data is read using pandas' read_csv function. The relevant data columns are extracted into separate lists.
-- Two plots are created using matplotlib: one for the UAV trajectory and one for the sensor data over time.
-- The plots are displayed using matplotlib's show function.
+- This script reads UAV data from a text file, extracts relevant data columns, and creates an animated plot. 
+- The plot consists of two subplots: one showing the UAV's trajectory over time, and the other showing sensor data over time.
+- The animation is created using matplotlib's FuncAnimation function, which calls the update function at regular intervals.
 
 PARAMETERS:
-- 'UAV_data.txt': a text file containing the UAV data. The data is tab-delimited.
-- The data file should contain the following columns: 't', 'NO2_conc', 'x_coord', 'y_coord'.
+- The script does not take any parameters. It reads data from a file named 'UAV_data.txt'.
+- The update function takes a single parameter, 'frame', which represents the current frame number in the animation.
 
 LIMITATIONS:
-- The script assumes that the data file is in the same directory as the script. If the data file is in a different location, the script will fail.
-- The script assumes that the data file is correctly formatted and contains the required columns. If the data file is incorrectly formatted or missing columns, the script will fail.
-- The script does not handle missing or NaN values in the data.
+- The script assumes that the data file is in the same directory and is named 'UAV_data.txt'.
+- The data file must contain columns named 't', 'NO2_conc', 'x_coord', and 'y_coord'.
+- The script does not handle missing or malformed data.
+- The animation may be slow or choppy for large data sets.
 
 STRUCTURES:
-- The script uses pandas' read_csv function to read the data file.
-- The data columns are extracted into separate lists using pandas' DataFrame indexing.
-- Two subplots are created using matplotlib's subplots function.
-- The data is plotted using matplotlib's plot function.
-- The plots are displayed using matplotlib's show function.
+- The script uses pandas to read and manipulate data.
+- It uses matplotlib to create plots and animations.
+- The update function uses slicing to select data up to the current frame number.
+- It uses the clear method to clear the subplots before each frame.
+- It uses the plot method to plot the data, and the set_title, set_xlabel, and set_ylabel methods to set the titles and labels of the subplots.
+- It uses the set_xlim and set_ylim methods to set the limits of the subplots.
 
-OUTPUT:
-- The script outputs two plots: one for the UAV trajectory and one for the sensor data over time.
-- The plots are displayed in a new window.
+OUTPUTS:
+- The script does not return any values. It displays an animated plot using matplotlib's show function.
+- It does not use any print statements.
 '''
-
 
 
 import pandas as pd
@@ -41,7 +37,7 @@ import matplotlib.pyplot as plt
 import matplotlib.animation as animation
 
 # Read the data
-data = pd.read_csv('UAV_data.txt', delimiter='\t')
+data = pd.read_csv('UAV_data.txt', delimiter = '\t')
 
 # Extract the lists
 time = data['t']
