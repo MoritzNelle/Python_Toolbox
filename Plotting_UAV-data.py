@@ -1,5 +1,5 @@
 '''
-READ ME:
+READ ME: 
 - This module contains the script to read data and create an animated plot as well as the function update to plot the data in an animated fashion
 - It imports pandas, matplotlib.pyplot, and matplotlib.animation.
 
