@@ -38,6 +38,7 @@ OUTPUT:
 
 import pandas as pd
 import matplotlib.pyplot as plt
+import matplotlib.animation as animation
 
 # Read the data
 data = pd.read_csv('UAV_data.txt', delimiter='\t')
@@ -51,18 +52,36 @@ y_coords = data['y_coord']
 # Create the figure and subplots
 fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(10, 5))
 
-# Plot the trajectory on the left subplot
-ax1.plot(x_coords, y_coords, color='blue')
-ax1.set_title('UAV Trajectory')
-ax1.set_xlabel('x-coordinate')
-ax1.set_ylabel('y-coordinate')
+# Create the figure and subplots
+fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(10, 5))
 
-# Plot the sensor data on the right subplot
-ax2.plot(time, concentration, color='red')
-ax2.set_title('Sensor Data Over Time')
-ax2.set_xlabel('Time')
-ax2.set_ylabel('NO2 Concentration')
+# Define the update function for the animation
+def update(frame):
+    # Clear the subplots
+    ax1.clear()
+    ax2.clear()
+    
+    # Plot the trajectory on the left subplot
+    ax1.plot(x_coords[:frame], y_coords[:frame], color='blue')
+    ax1.set_title('UAV Trajectory')
+    ax1.set_xlabel('x-coordinate')
+    ax1.set_ylabel('y-coordinate')
 
-# Display the plots
+    # Plot the sensor data on the right subplot
+    ax2.plot(time[:frame], concentration[:frame], color='red')
+    ax2.set_title('Sensor Data Over Time')
+    ax2.set_xlabel('Time')
+    ax2.set_ylabel('NO2 Concentration')
+
+    # Set the limits of the subplots
+    ax1.set_xlim(min(x_coords), max(x_coords))
+    ax1.set_ylim(min(y_coords), max(y_coords))
+    ax2.set_xlim(min(time), max(time))
+    ax2.set_ylim(min(concentration), max(concentration))
+
+# Create the animation
+ani = animation.FuncAnimation(fig, update, frames=len(time), interval=200)
+
+# Display the animation
 plt.tight_layout()
 plt.show()
