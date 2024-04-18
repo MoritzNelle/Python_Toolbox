@@ -22,6 +22,7 @@ OUTPUT:
 - The function does not contain any print statements. Any changes made to the DataFrame can be viewed by printing the DataFrame after calling the function.
 '''
 
+
 import pandas as pd
 
 def change_column_names(df, to_uppercase):
