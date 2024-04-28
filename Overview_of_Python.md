@@ -29,11 +29,16 @@
     - [Aliasing](#aliasing)
     - [Slicing](#slicing)
     - [Lists](#lists)
+    - [String Formatting](#string-formatting)
+      - [Using the % Operator](#using-the--operator)
+      - [Using f-strings](#using-f-strings)
     - [Execution limitation when calling a function](#execution-limitation-when-calling-a-function)
     - [File Handling](#file-handling)
       - [Different modes for opening a file:](#different-modes-for-opening-a-file)
     - [Local and Global Variables](#local-and-global-variables)
     - [Regular Expressions](#regular-expressions)
+      - [Common Regular Expression Patterns:](#common-regular-expression-patterns)
+      - [Common Regular Expression Operators:](#common-regular-expression-operators)
   - [Python OOP](#python-oop)
     - [Key Concepts of OOP:](#key-concepts-of-oop)
     - [Advantages of OOP:](#advantages-of-oop)
@@ -540,9 +545,41 @@ def convertParallelList(names, years, masses):
     #          ('Europa', 1610, 4.8e+22),
     #          ('Ganymede', 1610, 1.4819e+23),
     #          ('Callisto', 1610, 1.0759e+23)]
+```
 
+### String Formatting
+
+String formatting allows you to create dynamic strings by inserting values into a string template. There are several ways to format strings in Python, including the % operator and f-strings.
+
+#### Using the % Operator
+- `%s`: string
+- `%d` or `%i`: integer
+- `%f`: float
+- `%x`: hexadecimal
+- `%c`: character
+- `%e`: scientific notation
+-` %.<number of digits>f`: Float with a specific number of decimal places
+- `%<width>d`: Integer with a specific width
+- `%<width>s`: String with a specific width
+- `%<width>.<precision>f`: Float with a specific width and decimal places
+
+```python
+print ("Hello, %s!" % "World")  # Outputs: Hello, World!
+print ("The value of pi is %f" % 3.14159)  # Outputs: The value of pi is 3.141590
+print ("The value of pi is %.2f" % 3.14159)  # Outputs: The value of pi is 3.14
+print ("The value of %s is %d" % ("pi", 3))  # Outputs: The value of pi is 3
+print ("Aligned numbers:\n %5d %5d \n %5d %5d" % (3, 13, 543, 1))  # Outputs: Aligned numbers:     3     4
+```
+
+#### Using f-strings
+```python
+print (f"Hello, {'World'}!")  # Outputs: Hello, World!
+print (f"The value of pi is {3.14159}")  # Outputs: The value of pi is 3.14159
+print (f"The value of pi is {3.14159:.2f}")  # Outputs: The value of pi is 3.14
+print (f"The value of {'Variable'} is {Variable}) # Outputs: The value of Variable is 'Value of the variable'
 
 ```
+
 ### Execution limitation when calling a function
 Sometimes, you may want to limit the execution of a function to a specific context or environment. This can be achieved by using a decorator that checks the execution environment before running the function. This is commonly used when:
 - a test function should only run when the script is executed directly, not when it is imported as a module
@@ -608,17 +645,27 @@ print (a + theNumber)       # Outputs: 5
 ### Regular Expressions
 Sequences of characters that define a search pattern. They are used to search for specific patterns in text data. Python provides the `re` module for working with regular expressions.
 
-- `*`:  zero or more occurrences of the pattern
-- `+`: one or more occurrences of the pattern
-- `?`: zero or one occurrence of the pattern
-- `.`: any character except a newline
-- `^`: start of a string
-- `$`: end of a string
-- `[aeiou]`: any vowel character
-- `[^aeiou]`: any non-vowel character
-- `{2,3}`: 2 to 3 occurrences of the pattern
-- `\bword\b`: a specific word
-- `\bword\b`: a specific word ignoring case
+#### Common Regular Expression Patterns:
+- `\d`: any decimal digit [0-9]
+- `\D`: any non-digit character [^0-9]
+- `\s`: any whitespace character [\t\n\r\f\v]
+- `\S`: any non-whitespace character [^\t\n\r\f\v]
+- `\w`: any alphanumeric character [a-zA-Z0-9_]
+- `\W`: any non-alphanumeric character [^a-zA-Z0-9_]
+
+#### Common Regular Expression Operators:
+- `.`: matches any character except a newline
+- `|`: matches either the pattern on the left or the pattern on the right
+- `^`: matches everything except what in the class following ^
+- `[]`: creates a class of characters to match
+- `\`: escape character, enures meta-characters can be included in RE
+- `*`: matches (part of) the pattern 0 or more times (greedy)
+- `+`: matches (part of) the pattern 1 or more times (greedy)
+- `?`: matches (part of) the pattern 0 or 1 times (greedy)
+- `*?`, `+?`, `??`: non-greedy versions of `*`, `+`, `?`
+- `()`: groups the pattern together
+
+
 
 Here are some examples of using regular expressions in Python:
 
