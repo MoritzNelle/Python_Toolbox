@@ -15,14 +15,12 @@ def excel_to_csv(excel_path):
         df = pd.read_excel(excel_path, sheet_name=sheet_name)
         csv_path = os.path.join(output_dir, f"{sheet_name}.csv")
         df.to_csv(csv_path, index=False)
-        print(f"Saved {csv_path}")
+        # print(f"Saved {csv_path}")
     
     # Print the input file path and the output folder at the end of the operation
-    print("\nInput file path:")
-    print(excel_path)
-    print("\nOutput folder:")
-    print(output_dir)
+    print("Input file path:", excel_path)
+    print("Output folder:", output_dir)
 
 if __name__ == "__main__":
-    excel_path = r"path/to/excel/file.xlsx"
+    excel_path = r"C:\Users\morit\Desktop\WUR_Field_data_24.xlsx"
     excel_to_csv(excel_path)
